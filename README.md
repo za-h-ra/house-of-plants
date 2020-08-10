@@ -35,9 +35,12 @@ cared for.
 
 - Set up backend file architecture.
 - Build a Ruby on Rails server with RESTful JSON endpoints.
-- Build a database with 3 tables (users, plants, plant type, plant care)
+- Build a database with 3 tables (users, plants, plant modifications)
 - Build out the schema to store data information.
 - Implement a working generic controller for full CRUD functionality.
+
+#### Ruby on Rails Database Schema
+![](https://i.imgur.com/GDwv8t9.png)
 
 ### Front-End
 
@@ -95,6 +98,17 @@ src
 |__ services/
 
 ```
+
+#### Time Estimates
+| Task                | Priority | Estimated Time | Time Invested | Actual Time |
+| ------------------- | :------: | :------------: | :-----------: | :---------: |
+| Back End Server    |    H     |     10 hrs      |     N/A     |    N/A    |
+| Front End CRUD |    H     |     10 hrs      |     NA    |     NA    |
+| React File Architecture |    H     |     1 hrs      |     NA    |     NA    |
+| Ruby on Rails File Architecture |    H     |     1 hrs      |     NA    |     NA    |
+| Front-End CSS Styling |    H     |     10 hrs      |     NA    |     NA    |
+
+
 
 ## Post MVP
 
