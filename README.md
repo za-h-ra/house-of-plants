@@ -67,6 +67,35 @@ cared for.
 |       Rails       | Utilize Rails to define models for interacting with the database         |
 | Styled Components | Utilize Styled Components to style all react components                  |
 
+#### Component Hierarchy
+``` structure
+
+src
+|__ assets/
+      |__ account-icons
+      |__ social-icons
+      |__ images
+|__ components/
+      |__ shared/
+        |__ Header.jsx
+        |__ Footer.jsx
+        |__ Buttons.jsx
+        |__ Logo.jsx
+        |__ UserInfoCard.jsx
+        |__ Loader.jsx
+      |__ Discover/
+        |__DiscoverGallery.jsx
+      |__ UserInfo/
+        |__UserInfo.jsx
+      |__ Progression/
+        |__ProgressionBar.jsx
+      |__ PhotoBox/
+        |__PhotoBox.jsx
+      |__ PhotoBox/
+|__ services/
+
+```
+
 ## Post MVP
 
 In my post MVP, I would like to implement a social aspect of the app where users
