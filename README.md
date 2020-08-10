@@ -50,6 +50,13 @@ cared for.
 - Build out the ability to create, update, and delete plant information.
 - Implement responsive styling.
 
+### Wireframes
+![](https://i.imgur.com/pbWkXiK.png)
+![](https://i.imgur.com/aDRosAB.png)
+![](https://i.imgur.com/aTNbzi7.png)
+![](https://i.imgur.com/1k622CQ.png)
+![](https://i.imgur.com/8mowWOv.png)
+
 ### Libraries and Dependencies
 
 |      Library      | Description                                                              |
