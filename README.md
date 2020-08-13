@@ -40,7 +40,7 @@ cared for.
 - Implement a working generic controller for full CRUD functionality.
 
 #### Ruby on Rails Database Schema
-![](https://i.imgur.com/0hVDAq3.png)
+![](https://i.imgur.com/hdCtWLm.png)
 
 ### Front-End
 
