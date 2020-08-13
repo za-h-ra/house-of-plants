@@ -1,5 +1,6 @@
 class PlantCategoriesController < ApplicationController
   before_action :set_plant_category, only: [:show, :update, :destroy]
+  before_action :authorize_request, only: [:create, :update, :destroy, :add_plant]
 
   # GET /plant_categories
   def index
@@ -16,7 +17,7 @@ class PlantCategoriesController < ApplicationController
   # POST /plant_categories
   def create
     @plant_category = PlantCategory.new(plant_category_params)
-
+    @plant_category.user = @current_user
     if @plant_category.save
       render json: @plant_category, status: :created, location: @plant_category
     else
@@ -36,6 +37,17 @@ class PlantCategoriesController < ApplicationController
   # DELETE /plant_categories/1
   def destroy
     @plant_category.destroy
+  end
+
+#PUT / add plants to plant category / plant_categories/1/plant/2
+
+  def add_plant
+    @@plant_category = PlantCategory.find(params[:id])
+    @plant = Plant.find(params[:plant_id])
+
+    @plant_category.plants << @plant
+
+    render json: @plant_category, include: :plants 
   end
 
   private
