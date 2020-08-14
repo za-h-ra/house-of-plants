@@ -20,7 +20,10 @@ function App() {
   return (
     <div className="App">
       <Header
-        currentUser={currentUser}/>
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+      />
+      
       <Main setCurrentUser={setCurrentUser} />
     </div>
   );

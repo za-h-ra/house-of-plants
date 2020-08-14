@@ -1,27 +1,32 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
+import { removeToken } from '../Main/services/auth'
 
 export default function Header(props) {
-  return (
-    <header>
-      
-      <h1>House Of Plants</h1>
+	const history = useHistory()
 
-      {
-        props.currentUser ? (
-          <>
-            <p>{props.currentUser.username}</p>
-            <button>logout</button>
-          </>
-        ) : (
-          <>
-            <Link to='/signin'>Sign In</Link> <br />
-            <Link to='/signup'>Create an Account</Link>
-          </>
-        )
-      }
-      
-    </header>
-    
-  )
+	const handleLogout = () => {
+		props.setCurrentUser(null)
+		localStorage.removeItem('authToken')
+		removeToken()
+		history.push('/')
+	}
+
+	return (
+		<header>
+			<h1>House Of Plants</h1>
+
+			{props.currentUser ? (
+				<>
+					<p>{props.currentUser.username}</p>
+					<button onClick={handleLogout}>logout</button>
+				</>
+			) : (
+				<>
+					<Link to='/signin'>Sign In</Link> <br />
+					<Link to='/signup'>Create an Account</Link>
+				</>
+			)}
+		</header>
+	)
 }
