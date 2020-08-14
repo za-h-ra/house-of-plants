@@ -39,16 +39,6 @@ class PlantCategoriesController < ApplicationController
     @plant_category.destroy
   end
 
-#PUT / add plants to plant category / plant_categories/1/plant/2
-
-  def add_plant
-    @@plant_category = PlantCategory.find(params[:id])
-    @plant = Plant.find(params[:plant_id])
-
-    @plant_category.plants << @plant
-
-    render json: @plant_category, include: :plants 
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -58,6 +48,6 @@ class PlantCategoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def plant_category_params
-      params.require(:plant_category).permit(:name, :user_id)
+      params.require(:plant_category).permit(:name, :user_id, :image_url)
     end
 end

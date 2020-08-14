@@ -13,10 +13,10 @@ User.destroy_all
 
 @admin = User.create!(username: 'admin', email: 'admin@email.com', password: '123456')
 puts "#{User.count} users created"
-@flower = PlantCategory.create!(name: 'Orchid', user: @admin)
+@flower = PlantCategory.create!(name: 'Flower', user: @admin)
 puts "#{PlantCategory.count} category created"
 
-@orchid = Plant.create!(name: "Orchid")
+@orchid = Plant.create!(name: "Orchid", user: @admin, plant_category: @flower)
 puts "#{Plant.count} plants created"
 
 @flower.plants.push(@orchid)

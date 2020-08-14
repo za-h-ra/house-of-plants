@@ -16,7 +16,6 @@ class PlantsController < ApplicationController
   # POST /plants
   def create
     @plant = Plant.new(plant_params)
-
     if @plant.save
       render json: @plant, status: :created, location: @plant
     else
@@ -46,6 +45,6 @@ class PlantsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def plant_params
-      params.require(:plant).permit(:name, :date_purchased, :location, :temperature, :last_watered, :water_frequency, :food_frequency, :user_id)
+      params.require(:plant).permit(:name, :date_purchased, :location, :temperature, :last_watered, :water_frequency, :food_frequency, :user_id, :image_url, :plant_category_id)
     end
 end
