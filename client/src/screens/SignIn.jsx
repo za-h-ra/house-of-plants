@@ -5,21 +5,22 @@ import { loginUser } from '../services/auth'
 export default function SignIn(props) {
 	const [loginData, setLoginData] = useState({
 		username: '',
-		password: '',
+		password: ''
 	})
 
 	const handleChange = (e) => {
 		const { name, value } = e.target
 		setLoginData({
 			...loginData,
-			[name]: value,
+			[name]: value
 		})
   }
   
   const handleSubmit = async (e) => {
-    e.preventDault()
+    e.preventDefault()
     const userData = await loginUser(loginData)
     props.setCurrentUser(userData)
+    props.history.push('/')
   }
 
 	return (
@@ -40,7 +41,7 @@ export default function SignIn(props) {
 					value={loginData.password}
 					onChange={handleChange}
 				/>
-				<Link>sign up!</Link>
+				<Link to='/signup'>sign up!</Link>
 				<button>submit</button>
 			</form>
 		</div>
