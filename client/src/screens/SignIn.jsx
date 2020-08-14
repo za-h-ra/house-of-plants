@@ -1,30 +1,48 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { loginUser } from '../services/auth'
 
 export default function SignIn(props) {
-  const [login, setLogin] = useState({
-    username: "",
-    password: "",
-  })
+	const [loginData, setLoginData] = useState({
+		username: '',
+		password: '',
+	})
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setLogin({
-      ...login,
-      [name]: value
-    })
+	const handleChange = (e) => {
+		const { name, value } = e.target
+		setLoginData({
+			...loginData,
+			[name]: value,
+		})
   }
   
-  return (
-    <div>
-      <form>
+  const handleSubmit = async (e) => {
+    e.preventDault()
+    const userData = await loginUser(loginData)
+    props.setCurrentUser(userData)
+  }
+
+	return (
+		<div>
+      <form onSubmit={handleSubmit}>
         <h2>sign in!</h2>
-        <input type="text" name="username" value={login.username}  />
-        <input type="password" name="password" value={login.password} />
-        <Link>sign up</Link>
-        <button>submit</button>
-      </form>
-      
-    </div>
-  )
+				<input
+          type='text'
+          placeholder="username"
+					name='username'
+					value={loginData.username}
+					onChange={handleChange}
+				/>
+				<input
+          type='password'
+          placeholder="password"
+					name='password'
+					value={loginData.password}
+					onChange={handleChange}
+				/>
+				<Link>sign up!</Link>
+				<button>submit</button>
+			</form>
+		</div>
+	)
 }

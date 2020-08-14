@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import SignUp from '../../screens/SignUp'
 import SignIn from '../../screens/SignIn'
 
-export default function main() {
+export default function main(props) {
 	return (
     <main>
       <Switch>
@@ -11,7 +11,8 @@ export default function main() {
         {/* <Route exact path='/about' render={} />
         <Route exact path='/signup' render={} /> */}
         <Route exact path='/signin' render={(props) => ( 
-          <SignIn {...props} />
+          <SignIn {...props}
+            setCurrentUser={props.setCurrentUser}/>
         )} />
       </Switch>
 		</main>
