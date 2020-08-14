@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from './components/shared/Header/Header'
 import Main from './components/Main/Main'
 
 
 function App() {
+
+  const [currentUser, setCurrentUser] = useState(null)
+
+
   return (
     <div className="App">
-      <Header />
-      <Main />
+      <Header
+        currentUser={currentUser}/>
+      <Main setCurrentUser={setCurrentUser} />
     </div>
   );
 }
