@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ShowPlant() {
+export default function ShowPlants() {
   return (
     <div>
       

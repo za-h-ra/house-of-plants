@@ -2,27 +2,28 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import SignUp from '../SignUp'
 import SignIn from '../SignIn'
-import { readAllPlantCategories } from '../../services/plant-categories'
+import Dashboard from '../Dashboard'
+import { readAllPlants } from '../../services/plants'
 
 export default function Main(props) {
-	const { setCurrentUser } = props
+	const { setCurrentUser, currentUser } = props
 
-	const [plantCategory, setPlantCategory] = useState([])
+	const [plantList, setPlantList] = useState([])
 
-	useEffect(() => {
-		getPlantCategory()
-	}, [])
+  useEffect(() => {
+    if (currentUser) {
+      getPlantList()
+     }
+	}, [currentUser])
 
 
-	const getPlantCategory = async () => {
-		const plantCatgeoryList = await readAllPlantCategories()
-		setPlantCategory(plantCatgeoryList)
+	const getPlantList = async () => {
+		const plantList = await readAllPlants()
+		setPlantList(plantList)
 	}
 
 	return (
 		<main>
-			<Switch>
-				<Route exact path='/'/>
 				<Route
 					exact
 					path='/signin'
@@ -37,8 +38,13 @@ export default function Main(props) {
 						<SignUp {...props} setCurrentUser={setCurrentUser} />
 					)}
         />
-        
-			</Switch>
+      <Route exact path='/' render={(props) => (
+        <Dashboard
+          currentUser={currentUser}
+          plantList={plantList}
+          />
+        )} />
+			
 		</main>
 	)
 }

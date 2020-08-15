@@ -65,13 +65,6 @@ export default function Header(props) {
 				</>
         )}
      
-      {
-        props.currentUser && (
-          <>
-            <PlantProgress />
-          </>
-        )
-      }
 		</NavBar>
 	)
 }

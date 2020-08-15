@@ -25,8 +25,9 @@ function App() {
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
       />
-      <Home currentUser={currentUser}/>
-      <Main setCurrentUser={setCurrentUser} />
+      <Main
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser} />
       <Footer />
     </div>
   )
