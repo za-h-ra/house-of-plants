@@ -4,6 +4,7 @@ import SignUp from '../SignUp'
 import SignIn from '../SignIn'
 import Dashboard from '../Dashboard'
 import { readAllPlants } from '../../services/plants'
+import CreatePlant from '../CreatePlant'
 
 export default function Main(props) {
 	const { setCurrentUser, currentUser } = props
@@ -43,8 +44,15 @@ export default function Main(props) {
           currentUser={currentUser}
           plantList={plantList}
           />
+      )} />
+      
+      <Route exact path='/create-plant' render={(props) => (
+        <CreatePlant
+          currentUser={currentUser}
+          plantList={plantList}
+          setPlantList={setPlantList}
+          />
         )} />
-			
 		</main>
 	)
 }
