@@ -15,7 +15,7 @@ export default function Header(props) {
 
 	return (
 		<header>
-			<h1>House Of Plants</h1>
+			<h1>house of plants</h1>
 
 			{props.currentUser ? (
 				<>
