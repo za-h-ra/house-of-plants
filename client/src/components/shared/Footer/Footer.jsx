@@ -11,30 +11,50 @@ const FooterContainer = styled.footer`
 	padding: 40px 0px;
 	width: 100%;
 	bottom: 0;
-	position: fixed;
+  position: fixed;
 `
 
 const FooterCategory = styled.div`
 	display: flex;
-	flex-flow: column;
+  flex-flow: column;
+  .title {
+    color: #ffd9da;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    &:hover, &.active {
+      text-shadow: 0 0 .75px #ffd9da, 0 0 .75px #ffd9da;
+      text-decoration: underline;
+  }
 `
+
+const SocialContainer = styled.div`
+	line-height: 50px;
+`
+
+
 
 export default function Footer() {
 	return (
-		<FooterContainer>
-			<Logo />
-      <FooterCategory>
-        <div className="title">connect with us</div>
-        <div>
-        <Social />
-        </div>
-      </FooterCategory>
-      <FooterCategory>
-        <div className="title">company</div>
-        <Link to="/about">about us</Link>
-        <Link to="/careers">careers</Link>
-        <Link to="/press">press</Link>
-      </FooterCategory>
+    <FooterContainer>
+      <Logo />
+			<FooterCategory>
+				<div className='title'>connect with us</div>
+				<SocialContainer>
+					<Social />
+				</SocialContainer>
+			</FooterCategory>
+			<FooterCategory>
+				<div className='title'>company</div>
+				<Link to='/about'>about us</Link>
+				<Link to='/careers'>careers</Link>
+				<Link to='/press'>press</Link>
+			</FooterCategory>
 		</FooterContainer>
 	)
 }

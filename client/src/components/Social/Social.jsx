@@ -10,7 +10,7 @@ const SocialContainer = styled.div`
   height: 25px;
   margin: 0 10px;
   a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     &:hover {
       color: #ffd9da;
