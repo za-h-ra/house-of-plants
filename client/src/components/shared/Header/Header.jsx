@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { removeToken } from '../../../services/auth'
 import PlantProgress from '../../PlantProgress/PlantProgress'
+import Logo from '../Logo/Logo'
 
 export default function Header(props) {
 	const history = useHistory()
@@ -15,7 +16,7 @@ export default function Header(props) {
 
 	return (
 		<header>
-			<h1>house of plants</h1>
+			<Logo/>
 
 			{props.currentUser ? (
 				<>

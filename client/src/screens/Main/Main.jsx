@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import SignUp from '../SignUp'
 import SignIn from '../SignIn'
-import Home from '../Home'
 import { readAllPlantCategories } from '../../services/plant-categories'
 
 export default function Main(props) {
@@ -23,7 +22,7 @@ export default function Main(props) {
 	return (
 		<main>
 			<Switch>
-				<Route exact path='/' />
+				<Route exact path='/'/>
 				<Route
 					exact
 					path='/signin'

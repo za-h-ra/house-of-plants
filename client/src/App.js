@@ -29,7 +29,7 @@ function App() {
       
       <Main setCurrentUser={setCurrentUser} />
     </div>
-  );
+  )
 }
 
 export default App;
