@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { removeToken } from '../Main/services/auth'
+import { removeToken } from '../../../services/auth'
+import PlantProgress from '../../PlantProgress/PlantProgress'
 
 export default function Header(props) {
 	const history = useHistory()
@@ -18,7 +19,7 @@ export default function Header(props) {
 
 			{props.currentUser ? (
 				<>
-					<p>{props.currentUser.username}</p>
+					<p>hey, {props.currentUser.username}!</p>
 					<button onClick={handleLogout}>logout</button>
 				</>
 			) : (
@@ -26,7 +27,15 @@ export default function Header(props) {
 					<Link to='/signin'>Sign In</Link> <br />
 					<Link to='/signup'>Create an Account</Link>
 				</>
-			)}
+        )}
+      <hr />
+      {
+        props.currentUser && (
+          <>
+            <PlantProgress />
+          </>
+        )
+      }
 		</header>
 	)
 }
