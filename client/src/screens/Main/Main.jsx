@@ -30,14 +30,17 @@ export default function Main(props) {
 					exact
 					path='/'
 					render={(props) => (
-						<Home />
+            <Home
+              {...props}
+              setCurrentUser={setCurrentUser} />
 					)}
 				/>
 				<Route
 					exact
 					path='/signin'
 					render={(props) => (
-						<SignIn {...props} setCurrentUser={setCurrentUser} />
+            <SignIn {...props}
+              setCurrentUser={setCurrentUser} />
 					)}
 				/>
 				<Route
