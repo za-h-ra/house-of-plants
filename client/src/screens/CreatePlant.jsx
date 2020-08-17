@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { postPlant } from '../services/plants'
 
-export default function CreatePlant() {
+export default function CreatePlant(props) {
   const [plantData, setPlantData] = useState({
     name: '',
     image_url: '',
@@ -14,12 +15,28 @@ export default function CreatePlant() {
 
   const handleChange = (e) => {
     const { value } = e.target
-    setPlantData({ name: value })
+    setPlantData({
+      name: value
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const createPlant = await postPlant(plantData)
+    props.setPlantList([
+      ...props.plantList,
+      createPlant
+    ])
+    props.history.push('/')
   }
 
   return (
-    <form>
-      <input type="text" value={plantData.name} onChange
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={plantData.name}
+        onChange={handleChange} />
+      <button>create</button>
     </form>
   )
 }

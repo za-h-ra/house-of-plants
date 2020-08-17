@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import About from '../About'
 import SignUp from '../SignUp'
 import SignIn from '../SignIn'
 import Dashboard from '../Dashboard'
@@ -23,7 +24,14 @@ export default function Main(props) {
 	}
 
 	return (
-		<main>
+    <main>
+      <Route
+					exact
+					path='/'
+					render={(props) => (
+						<About />
+					)}
+				/>
 				<Route
 					exact
 					path='/signin'
