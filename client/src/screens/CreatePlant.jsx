@@ -21,6 +21,10 @@ const FormBox = styled.form`
 	box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
 `
 
+const StyledInput = styled.input`
+
+`
+
 
 export default function CreatePlant(props) {
 	const [plantData, setPlantData] = useState({
@@ -31,13 +35,17 @@ export default function CreatePlant(props) {
 		temperature: '',
 		last_watered: '',
 		water_frequency: '',
-		food_frequency: '',
-	})
+    food_frequency: '',
+    plant_category_id: ''
+  })
+  
+
 
 	const handleChange = (e) => {
-		const { value } = e.target
-		setPlantData({
-			name: value,
+		const { value, name } = e.target
+    setPlantData({
+      ...plantData,
+			[name]: value,
 		})
 	}
 
@@ -52,54 +60,62 @@ export default function CreatePlant(props) {
 		<FormContainer>
       <FormBox onSubmit={handleSubmit}>
       <h2>add your plant!</h2>
-				<input
+				{/* <input
 					type='text'
 					placeholder='select category'
 					value={plantData.name}
 					onChange={handleChange}
-				/>
-				<input
+				/> */}
+        <select name="plant_category_id" onChange={handleChange}> 
+          <option selected disabled>Select Plant Category</option>
+          {
+            props.plantCategory.map(category => (
+              <option value={category.id}>{category.name}</option>
+            ))
+        }
+        </select>
+        <input
+          name="name"
 					type='text'
 					placeholder='plant name'
 					value={plantData.name}
 					onChange={handleChange}
 				/>
-				<input
+        <input
+          name="date_purchased"
 					type='text'
 					placeholder='date purchased'
-					value={plantData.name}
+					value={plantData.date_purchased}
 					onChange={handleChange}
 				/>
-				<input
+        <input
+          name="location"
 					type='text'
 					placeholder='location'
-					value={plantData.name}
+					value={plantData.location}
 					onChange={handleChange}
 				/>
-				<input
+        <input
+          name="temperature"
 					type='text'
 					placeholder='temperature'
-					value={plantData.name}
+					value={plantData.temperature}
 					onChange={handleChange}
 				/> <br />
 				<label>
-					choose your water frequency:
+          choose your water frequency:
 					<input
+            name="water_frequency"
 						type='text'
-						placeholder='daily'
-						value={plantData.name}
+						placeholder='water frequency'
+						value={plantData.water_frequency}
 						onChange={handleChange}
-					/>
-					<input
+          />
+          <input
+            name="food_frequency"
 						type='text'
-						placeholder='weekly'
-						value={plantData.name}
-						onChange={handleChange}
-					/>
-					<input
-						type='text'
-						placeholder='monthly'
-						value={plantData.name}
+						placeholder='food frequency'
+						value={plantData.food_frequency}
 						onChange={handleChange}
 					/>
 				</label> <br />

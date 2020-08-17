@@ -88,7 +88,7 @@ export default function SignIn(props) {
 		e.preventDefault()
 		const userData = await loginUser(loginData)
 		props.setCurrentUser(userData)
-		props.history.push('/')
+		props.history.push('/dashboard')
 	}
 
 	return (

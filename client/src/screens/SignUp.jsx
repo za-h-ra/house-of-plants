@@ -87,7 +87,7 @@ export default function SignUp(props) {
     e.preventDefault()
     const userData = await registerUser(loginData)
     props.setCurrentUser(userData)
-    props.history.push('/')
+    props.history.push('/dashboard')
   }
 
 	return (
