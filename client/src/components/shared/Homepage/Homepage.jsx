@@ -8,9 +8,9 @@ const HomepageContainer = styled.div`
 	align-items: center;
 	justify-content: center;
 	min-height: 800px;
-  background-color: #0a3d33;
+  background-color: #dff9fb;
   background-size: cover;
-  background-positon: 
+  background-positon: center;
   * {
     box-sizing: border-box;
   }
