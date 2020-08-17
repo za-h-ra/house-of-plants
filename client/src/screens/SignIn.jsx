@@ -14,13 +14,16 @@ const FormBox = styled.form`
 	width: 300px;
 	padding: 40px;
 	top: 50%;
-	left: 50%;
+  left: 50%;
+  color: white;
 	// transform: translate(-50%, -50%);
-	background: #78e08f;
+  background: #78e08f;
+  background-image: linear-gradient(#73C8A9, #373B44);
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-top: 100px;
   margin-bottom: 100px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2) ;
 `
 const StyledInput = styled.input`
   background-color: transparent;
@@ -33,6 +36,7 @@ const StyledInput = styled.input`
   padding: 14px 10px;
   outline: none;
   color: white;
+  border-radius: 24px;
 `
 
 
