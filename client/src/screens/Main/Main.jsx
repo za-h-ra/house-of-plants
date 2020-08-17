@@ -8,8 +8,7 @@ import CreatePlant from '../CreatePlant'
 
 export default function Main(props) {
 	const { setCurrentUser, currentUser } = props
-
-	const [plantList, setPlantList] = useState([])
+  const [plantList, setPlantList] = useState([])
 
   useEffect(() => {
     if (currentUser) {

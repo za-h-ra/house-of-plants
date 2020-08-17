@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, useHistory, NavLink } from 'react-router-dom'
 import { removeToken } from '../../../services/auth'
-import PlantProgress from '../../PlantProgress/PlantProgress'
 import Logo from '../Logo/Logo'
 import styled from 'styled-components'
 

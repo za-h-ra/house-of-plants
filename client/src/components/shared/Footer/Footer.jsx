@@ -11,7 +11,7 @@ const FooterContainer = styled.footer`
 	padding: 40px 0px;
 	width: 100%;
 	bottom: 0;
-  position: fixed;
+  position: static;
 `
 
 const FooterCategory = styled.div`
