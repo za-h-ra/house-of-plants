@@ -7,14 +7,14 @@ const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   flex-flow: column;
-  background-color: #0a3d33;
+  background-color: transparent;
 `
 
 const LogoNav = styled(NavLink)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #ffd9da;
+  color: white;
   font-size: 40px;
   font-weight: 600;
 `

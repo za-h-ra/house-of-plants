@@ -5,7 +5,7 @@ import Logo from '../Logo/Logo'
 import styled from 'styled-components'
 
 const NavBar = styled.nav`
-  background-color: #0a3d33;
+  background-color: #006266;
   width: 100%;
   height: 90px;
   text-decoration: none;

@@ -1,9 +1,10 @@
 import React from 'react'
+import Homepage from '../components/shared/Homepage/Homepage'
 
 export default function Home(props) {
   return (
     <div>
-      {/* <h1>I'm the homepage</h1> */}
+      <Homepage />
     </div>
   )
 }

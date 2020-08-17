@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import About from '../About'
+import Home from '../Home'
 import SignUp from '../SignUp'
 import SignIn from '../SignIn'
 import Dashboard from '../Dashboard'
@@ -29,7 +30,7 @@ export default function Main(props) {
 					exact
 					path='/'
 					render={(props) => (
-						<About />
+						<Home />
 					)}
 				/>
 				<Route

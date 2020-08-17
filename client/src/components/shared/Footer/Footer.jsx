@@ -7,7 +7,7 @@ import Social from '../../Social/Social'
 const FooterContainer = styled.footer`
 	display: flex;
 	justify-content: space-around;
-	background-color: #0a3d33;
+	background-color: #006266;
 	padding: 40px 0px;
 	width: 100%;
 	bottom: 0;
@@ -18,7 +18,7 @@ const FooterCategory = styled.div`
 	display: flex;
   flex-flow: column;
   .title {
-    color: #ffd9da;
+    color: white;
     font-weight: 600;
     font-size: 20px;
   }
