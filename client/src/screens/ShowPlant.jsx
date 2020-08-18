@@ -21,7 +21,12 @@ export default function ShowPlant(props) {
           <>
             <img src={onePlant.image_url}/>
             <h3>{onePlant.name}</h3>
+            <p>{onePlant.date_purchased}</p>
+            <p>{onePlant.location}</p>
             <p>{onePlant.temperature}</p>
+            <p>{onePlant.last_watered}</p>
+            <p>{onePlant.water_frequency}</p>
+            <p>{onePlant.food_frequency}</p>
             </>
         )
       }
