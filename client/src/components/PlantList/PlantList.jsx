@@ -8,7 +8,7 @@ export default function PlantList(props) {
   
   const handleDelete = async (id) => {
     await destroyPlant(id)
-    props.setPlantList(props.plants.filter((plant) => {
+    props.setPlantList(props.plantList.filter((plant) => {
       return plant.id !== id
     }))
   }

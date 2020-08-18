@@ -21,6 +21,7 @@ export default function ShowPlant(props) {
           <>
             <img src={onePlant.image_url}/>
             <h3>{onePlant.name}</h3>
+            <p>{onePlant.plant_category.name}</p>
             <p>{onePlant.date_purchased}</p>
             <p>{onePlant.location}</p>
             <p>{onePlant.temperature}</p>

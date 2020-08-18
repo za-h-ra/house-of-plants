@@ -46,7 +46,28 @@ export default function UpdatePlant(props) {
   
   const setFormData = async () => {
     const onePlant = await readOnePlant(props.match.params.id)
-    setPlantData({name: onePlant.name})
+    const {
+      name,
+      image_url,
+      date_purchased,
+      location,
+      temperature,
+      last_watered,
+      water_frequency,
+      food_frequency,
+      plant_category_id
+    } = onePlant 
+    setPlantData({
+      name,
+      image_url,
+      date_purchased,
+      location,
+      temperature,
+      last_watered,
+      water_frequency,
+      food_frequency,
+      plant_category_id
+    })
   }
 
 
@@ -60,8 +81,14 @@ export default function UpdatePlant(props) {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault()
-		const createPlant = await putPlant(plantData)
-		props.setPlantList([...props.plantList, createPlant])
+    const updatePlant = await putPlant(props.match.params.id, plantData)
+    props.setPlantList(props.plantList.map((plant) => {
+      if (plant.id === updatePlant.id) {
+        return updatePlant 
+      } else {
+        return plant
+      }
+    }))
 		props.history.push('/dashboard')
 	}
 
@@ -129,7 +156,7 @@ export default function UpdatePlant(props) {
 						onChange={handleChange}
 					/>
 				</label> <br />
-				<button>create</button>
+				<button>update</button>
 			</FormBox>
 		</FormContainer>
 	)

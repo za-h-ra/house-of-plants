@@ -82,9 +82,11 @@ export default function Main(props) {
           {...props}
        />
       )} />
-            <Route exact path='/plants/:id/update' render={(props) => (
+        <Route exact path='/plants/:id/update' render={(props) => (
          <UpdatePlant
           {...props}
+          plantList={plantList}
+          setPlantList={setPlantList}
        />
       )} />
 		</main>

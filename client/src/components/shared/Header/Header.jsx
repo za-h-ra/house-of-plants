@@ -35,9 +35,35 @@ const LinksContainer = styled.div`
 	}
 `
 
-const StyledLink = styled.button`
+const LoggedInContainer = styled.div`
+	display: flex;
+	align-items: center;
+  justify-content: space-between;
+  font-family: 'Quicksand', sans-serif;
+  padding: 0px 20px;
+`
 
+const StyledButton = styled.button`
+	border-radius: 20px;
+	height: 40px;
+  width: 70px;
+  border: 2px solid #0a3d62;
+  outline: none;
+  margin-left: 20px;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #0a3d62;
+  color: white;
+  font-size: 15px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  &:hover {
+    background-color: #3c6382;
+  }
+`
 
+const StyledGreeting = styled.p`
+	color: #ffffff;
+	font-size: 20px;
 `
 
 export default function Header(props) {
@@ -52,13 +78,13 @@ export default function Header(props) {
 
 	return (
 		<NavBar>
-			<Logo />
+			<Logo currentUser={props.currentUser} />
 
 			{props.currentUser ? (
-				<>
-					<p>hey, {props.currentUser.username}!</p>
-					<button onClick={handleLogout}>logout</button>
-				</>
+				<LoggedInContainer>
+					<StyledGreeting>hey, {props.currentUser.username}!</StyledGreeting>
+					<StyledButton onClick={handleLogout}>logout</StyledButton>
+				</LoggedInContainer>
 			) : (
 				<>
 					<LinksContainer>
