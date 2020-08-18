@@ -22,7 +22,7 @@ const LogoNav = styled(NavLink)`
 export default function Logo() {
   return (
     <LogoContainer>
-      <LogoNav to="/">house of plants</LogoNav>
+      <LogoNav to="/dashboard">house of plants</LogoNav>
     </LogoContainer>
   )
 }
