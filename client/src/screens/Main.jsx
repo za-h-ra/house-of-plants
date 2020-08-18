@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Route, Switch } from 'react-router-dom'
-import Home from '../Home'
-import SignUp from '../SignUp'
-import SignIn from '../SignIn'
-import Dashboard from '../Dashboard'
-import ShowPlant from '../ShowPlant'
-import { readAllPlants } from '../../services/plants'
-import CreatePlant from '../CreatePlant'
-import { readAllPlantCategories } from '../../services/plant-categories'
+import { Route } from 'react-router-dom'
+import Home from './Home'
+import SignUp from './SignUp'
+import SignIn from './SignIn'
+import Dashboard from './Dashboard'
+import ShowPlant from './ShowPlant'
+import UpdatePlant from './UpdatePlant'
+import CreatePlant from './CreatePlant'
+import { readAllPlants } from '../services/plants'
+import { readAllPlantCategories } from '../services/plant-categories'
 
 export default function Main(props) {
 	const { setCurrentUser, currentUser } = props
@@ -78,6 +79,11 @@ export default function Main(props) {
 
       <Route exact path='/plants/:id' render={(props) => (
          <ShowPlant
+          {...props}
+       />
+      )} />
+            <Route exact path='/plants/:id/update' render={(props) => (
+         <UpdatePlant
           {...props}
        />
       )} />

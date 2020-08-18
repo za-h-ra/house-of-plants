@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/shared/Header/Header'
-import Main from './screens/Main/Main'
-import Home from './screens/Home'
+import Main from './screens/Main'
 import Footer from './components/shared/Footer/Footer'
 import { verifyUser } from './services/auth';
 

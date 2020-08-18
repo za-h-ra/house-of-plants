@@ -19,12 +19,14 @@ export default function PlantList(props) {
 			<p>
 				you have <strong>{plantList.length}</strong> plants in your house
 			</p>
-			<Link to='/create-plant'>add a plant</Link>
+      <Link to='/create-plant'>add a plant</Link><br />
 
 			{plantList.map((plant) => (
 				<div key={plant.id}>
 					<img src={plant.image_url} /> <br/>
           <Link to={`/plants/${plant.id}`}>{plant.name}</Link>
+          <br />
+          <Link to={`/plants/${plant.id}/update`}><button>update your plant</button></Link> 
           <br />
           <button onClick={() => handleDelete(plant.id)}>delete</button>
 				</div>
