@@ -5,16 +5,20 @@ import Home from '../Home'
 import SignUp from '../SignUp'
 import SignIn from '../SignIn'
 import Dashboard from '../Dashboard'
+import ShowPlant from '../ShowPlant'
 import { readAllPlants } from '../../services/plants'
 import CreatePlant from '../CreatePlant'
+import { readAllPlantCategories } from '../../services/plant-categories'
 
 export default function Main(props) {
 	const { setCurrentUser, currentUser } = props
   const [plantList, setPlantList] = useState([])
+  const [plantCategory, setPlantCategory] = useState([])
 
   useEffect(() => {
     if (currentUser) {
       getPlantList()
+      getPlantCategory()
      }
 	}, [currentUser])
 
@@ -22,7 +26,12 @@ export default function Main(props) {
 	const getPlantList = async () => {
 		const plantList = await readAllPlants()
 		setPlantList(plantList)
-	}
+  }
+  
+  const getPlantCategory = async () => {
+    const plantCategory = await readAllPlantCategories()
+    setPlantCategory(plantCategory)
+  }
 
 	return (
     <main>
@@ -30,14 +39,17 @@ export default function Main(props) {
 					exact
 					path='/'
 					render={(props) => (
-						<Home />
+            <Home
+              {...props}
+              setCurrentUser={setCurrentUser} />
 					)}
 				/>
 				<Route
 					exact
 					path='/signin'
 					render={(props) => (
-						<SignIn {...props} setCurrentUser={setCurrentUser} />
+            <SignIn {...props}
+              setCurrentUser={setCurrentUser} />
 					)}
 				/>
 				<Route
@@ -47,7 +59,7 @@ export default function Main(props) {
 						<SignUp {...props} setCurrentUser={setCurrentUser} />
 					)}
         />
-      <Route exact path='/' render={(props) => (
+      <Route exact path='/dashboard' render={(props) => (
         <Dashboard
           currentUser={currentUser}
           plantList={plantList}
@@ -56,11 +68,19 @@ export default function Main(props) {
       
       <Route exact path='/create-plant' render={(props) => (
         <CreatePlant
+          {...props}
           currentUser={currentUser}
           plantList={plantList}
           setPlantList={setPlantList}
+          plantCategory={plantCategory}
           />
-        )} />
+      )} />
+
+      <Route path='/create-plant/:id' render={(props) => {
+        <ShowPlant
+          {...props}
+        />
+    }}
 		</main>
 	)
 }

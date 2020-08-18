@@ -39,29 +39,35 @@ const StyledInput = styled.input`
 	border-radius: 24px;
   transition: 0.25s;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+  ::placeholder {
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+
+
 `
 
 const StyledButton = styled.button`
-  background-color: transparent;
-  font-weight: 700;
+	background-color: transparent;
+	font-weight: 700;
 	width: 100%;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
 	margin: 20px auto;
 	text-align: center;
 	border: 2px solid #0a3d62;
 	padding: 14px 10px;
 	outline: none;
 	color: white;
-  border-radius: 24px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  transition: filter 0.2s ease-out;
-  &:hover {
-    filter: saturate(50%);
-    background-color: #0a3d62;
-  }
+	border-radius: 24px;
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+	transition: filter 0.2s ease-out;
+	&:hover {
+		filter: saturate(50%);
+		background-color: #0a3d62;
+	}
 `
 
 export default function SignIn(props) {
@@ -82,7 +88,7 @@ export default function SignIn(props) {
 		e.preventDefault()
 		const userData = await loginUser(loginData)
 		props.setCurrentUser(userData)
-		props.history.push('/')
+		props.history.push('/dashboard')
 	}
 
 	return (
@@ -103,8 +109,8 @@ export default function SignIn(props) {
 					value={loginData.password}
 					onChange={handleChange}
 				/>{' '}
-        <StyledButton>login</StyledButton>
-        <Link to='/signup'>sign up!</Link>
+				<StyledButton>login</StyledButton>
+				<Link to='/signup'>sign up!</Link>
 			</FormBox>
 		</FormContainer>
 	)
