@@ -20,7 +20,7 @@ export const putPlantCategory = async (id, data) => {
 	return resp.data
 }
 
-export const destoryPlantCategories = async (id) => {
+export const destroyPlantCategories = async (id) => {
 	const resp = await api.delete(`/plant_categories/${id}`)
 	return resp
 }
