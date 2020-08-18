@@ -14,3 +14,8 @@ export const readOnePlant = async (id) => {
 	const resp = await api.get(`/plants/${id}`)
 	return resp.data
 }
+
+export const destroyPlant = async (id) => {
+	const resp = await api.delete(`/plants/${id}`)
+	return resp
+}

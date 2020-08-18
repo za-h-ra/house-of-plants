@@ -62,6 +62,7 @@ export default function Main(props) {
         <Dashboard
           currentUser={currentUser}
           plantList={plantList}
+          setPlantList={setPlantList}
           />
       )} />
       
@@ -77,7 +78,7 @@ export default function Main(props) {
 
       <Route exact path='/plants/:id' render={(props) => (
          <ShowPlant
-         {...props}
+          {...props}
        />
       )} />
 		</main>

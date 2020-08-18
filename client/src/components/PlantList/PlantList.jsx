@@ -1,9 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { destroyPlant } from '../../services/plants'
 
 export default function PlantList(props) {
-	const { plantList } = props
+  const { plantList } = props
+  
+  const handleDelete = async (id) => {
+    await destroyPlant(id)
+    props.setPlantList(props.plants.filter((plant) => {
+      return plant.id !== id
+    }))
+  }
+
 	return (
 		<>
 			<h2>My Plants</h2>
@@ -14,8 +23,10 @@ export default function PlantList(props) {
 
 			{plantList.map((plant) => (
 				<div key={plant.id}>
-					<img src={plant.image_url} />
-					<Link to={`/plants/${plant.id}`}>{plant.name}</Link>
+					<img src={plant.image_url} /> <br/>
+          <Link to={`/plants/${plant.id}`}>{plant.name}</Link>
+          <br />
+          <button onClick={() => handleDelete(plant.id)}>delete</button>
 				</div>
 			))}
 		</>
