@@ -53,7 +53,7 @@ export default function CreatePlant(props) {
 		e.preventDefault()
 		const createPlant = await postPlant(plantData)
 		props.setPlantList([...props.plantList, createPlant])
-		props.history.push('/')
+		props.history.push('/dashboard')
 	}
 
 	return (
@@ -79,6 +79,13 @@ export default function CreatePlant(props) {
 					type='text'
 					placeholder='plant name'
 					value={plantData.name}
+					onChange={handleChange}
+        />
+         <input
+          name="image_url"
+					type='text'
+					placeholder='image URL'
+					value={plantData.image_url}
 					onChange={handleChange}
 				/>
         <input

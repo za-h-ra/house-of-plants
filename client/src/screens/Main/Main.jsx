@@ -5,6 +5,7 @@ import Home from '../Home'
 import SignUp from '../SignUp'
 import SignIn from '../SignIn'
 import Dashboard from '../Dashboard'
+import ShowPlant from '../ShowPlant'
 import { readAllPlants } from '../../services/plants'
 import CreatePlant from '../CreatePlant'
 import { readAllPlantCategories } from '../../services/plant-categories'
@@ -73,7 +74,13 @@ export default function Main(props) {
           setPlantList={setPlantList}
           plantCategory={plantCategory}
           />
-        )} />
+      )} />
+
+      <Route path='/create-plant/:id' render={(props) => {
+        <ShowPlant
+          {...props}
+        />
+    }}
 		</main>
 	)
 }
