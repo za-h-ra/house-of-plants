@@ -60,12 +60,6 @@ export default function CreatePlant(props) {
 		<FormContainer>
       <FormBox onSubmit={handleSubmit}>
       <h2>add your plant!</h2>
-				{/* <input
-					type='text'
-					placeholder='select category'
-					value={plantData.name}
-					onChange={handleChange}
-				/> */}
         <select name="plant_category_id" onChange={handleChange}> 
           <option selected disabled>Select Plant Category</option>
           {
