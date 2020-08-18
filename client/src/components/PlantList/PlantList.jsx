@@ -15,7 +15,7 @@ export default function PlantList(props) {
 			{plantList.map((plant) => (
 				<div key={plant.id}>
 					<img src={plant.image_url} />
-					<p>{plant.name}</p>
+					<Link to={`/plants/${plant.id}`}>{plant.name}</Link>
 				</div>
 			))}
 		</>

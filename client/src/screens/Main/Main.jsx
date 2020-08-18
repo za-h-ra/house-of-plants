@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import About from '../About'
 import Home from '../Home'
 import SignUp from '../SignUp'
 import SignIn from '../SignIn'
@@ -76,11 +75,11 @@ export default function Main(props) {
           />
       )} />
 
-      <Route path='/create-plant/:id' render={(props) => {
-        <ShowPlant
-          {...props}
-        />
-    }}
+      <Route exact path='/plants/:id' render={(props) => (
+         <ShowPlant
+         {...props}
+       />
+      )} />
 		</main>
 	)
 }
