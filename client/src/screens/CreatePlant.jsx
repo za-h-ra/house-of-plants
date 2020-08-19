@@ -69,6 +69,26 @@ const StyledButton = styled.button`
 	}
 `
 
+const StyledCategory = styled.select`
+  background-color: transparent;
+	width: 100%;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	display: block;
+	margin: 20px auto;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+	border: 2px solid #0a3d62;
+	padding: 14px 10px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+  transition: 0.25s;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+`
+
 
 export default function CreatePlant(props) {
 	const [plantData, setPlantData] = useState({
@@ -104,14 +124,14 @@ export default function CreatePlant(props) {
 		<FormContainer>
       <FormBox onSubmit={handleSubmit}>
       <h2>add your plant!</h2>
-        <select name="plant_category_id" onChange={handleChange}> 
+        <StyledCategory name="plant_category_id" onChange={handleChange}> 
           <option selected disabled>Select Plant Category</option>
           {
             props.plantCategory.map(category => (
               <option value={category.id}>{category.name}</option>
             ))
         }
-        </select>
+        </StyledCategory>
         <StyledInput
           name="name"
 					type='text'
