@@ -71,7 +71,7 @@ const StyledButton = styled.button`
 
 const StyledLink = styled(Link)`
   color: white;
-  text-decoration: none;
+  text-decoration: underline;
   &:hover {
     color: #649173;
     text-decoration: underline;

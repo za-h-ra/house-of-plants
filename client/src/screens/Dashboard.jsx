@@ -5,7 +5,6 @@ import styled from 'styled-components'
 
 const DashboardContainer = styled.div`
   background-color: #73c8a9;
-
   *{
     box-sizing: border-box;
   }
