@@ -25,15 +25,7 @@ const StyledHeading = styled.h2`
 	font-size: 40px;
 `
 
-const StyledLink = styled(Link)`
-	color: white;
-	text-decoration: none;
-	font-weight: 700;
-	&:hover {
-		text-decoration: underline;
-		color: #ff9068;
-	}
-`
+
 
 const TagLine = styled.p`
 	color: white;
@@ -50,18 +42,26 @@ const PlantCard = styled.div`
  justify-content: space-around;
  align-items: center;
  flex-wrap: wrap;
+ text-align: center;
 
 `
 
 const PlantDetails = styled.div`
-  background: #079992;
-  width: 200px;
+  background-image: linear-gradient(#fad390, #b71540);
+  width: 400px;
   text-align: center;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   margin-top: 20px;
   padding: 2%;
   
+`
 
+const PlantImage = styled.img`
+  object-fit: cover;
+  height: 300px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  
 `
 
 const PlantLink = styled(Link)`
@@ -69,17 +69,29 @@ color: white;
 text-transform: uppercase;
 text-decoration: none;
 font-weight: 600;
+font-size: 20px;
+letter-spacing: 2px;
 &:hover {
   text-decoration: underline;
 }
-
 `
 
-const PlantImage = styled.img`
-  height: 200px;
-  width: 100%;
+const StyledButton = styled.button`
+  background-color: #0a3d62;
+  margin: 10px auto;
+  font-family: 'Quicksand', sans-serif;
+  color: white;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
   text-align: center;
-  
+  outline: none;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 10px;
+  font-weight: 500;
+  &:hover {
+    background-color: #3c6382;
+  }
+
 `
 
 export default function PlantList(props) {
@@ -98,7 +110,7 @@ export default function PlantList(props) {
 		<StyledDashboard>
 			<HeadingContainer>
 				<StyledHeading>My Plants</StyledHeading>
-				<StyledLink to='/create-plant'>add a plant</StyledLink>
+				<Link to='/create-plant'><AddButton/></Link>
 			</HeadingContainer>
 
 			<TagLine>
@@ -112,10 +124,10 @@ export default function PlantList(props) {
 						<PlantLink to={`/plants/${plant.id}`}>{plant.name}</PlantLink>
 						<br />
 						<Link to={`/plants/${plant.id}/update`}>
-							<button>update your plant</button>
+              <StyledButton>update your plant</StyledButton>
 						</Link>
 						<br />
-						<button onClick={() => handleDelete(plant.id)}>delete</button>
+						<StyledButton onClick={() => handleDelete(plant.id)}>delete</StyledButton>
 					</PlantDetails>
 				))}
 			</PlantCard>

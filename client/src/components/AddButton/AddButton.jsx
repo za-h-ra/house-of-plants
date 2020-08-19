@@ -11,12 +11,12 @@ const StyledAddButton = styled.div`
   position: relative;
   
   &:hover {
-    background: #218c74;
+    background-image: linear-gradient(#fad390, #b71540);
   }
 `
 
 const AddButtonLineVertical = styled.div`
-	width: 3px;
+	width: 5px;
 	height: 50px;
 	background: white;
 	border: 1px solid;
@@ -28,7 +28,7 @@ const AddButtonLineVertical = styled.div`
 `
 
 const AddButtonLineHorizontal = styled.div`
-	width: 3px;
+	width: 5px;
 	height: 50px;
 	background: white;
 	border: 1px solid;

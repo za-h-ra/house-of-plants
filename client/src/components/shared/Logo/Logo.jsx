@@ -14,7 +14,7 @@ const LogoNav = styled(NavLink)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #F8EFBA;
+  color: white;
   font-size: 40px;
   font-weight: 600;
 `
