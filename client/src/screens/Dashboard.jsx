@@ -1,6 +1,5 @@
 import React from 'react'
 import PlantList from '../components/PlantList/PlantList'
-import WaterPlant from '../components/WaterPlant/WaterPlant'
 import styled from 'styled-components'
 
 const DashboardContainer = styled.div`
