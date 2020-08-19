@@ -44,7 +44,6 @@ const StyledInput = styled.input`
     color: white;
     font-family: 'Quicksand', sans-serif;
 
-
 `
 
 const StyledButton = styled.button`
@@ -68,6 +67,15 @@ const StyledButton = styled.button`
 		filter: saturate(50%);
 		background-color: #0a3d62;
 	}
+`
+
+const StyledLink = styled(Link)`
+  color: white;
+  text-decoration: underline;
+  &:hover {
+    color: #649173;
+    text-decoration: underline;
+  }
 `
 
 export default function SignIn(props) {
@@ -110,7 +118,7 @@ export default function SignIn(props) {
 					onChange={handleChange}
 				/>{' '}
 				<StyledButton>login</StyledButton>
-				<Link to='/signup'>sign up!</Link>
+				<StyledLink to='/signup'>sign up!</StyledLink>
 			</FormBox>
 		</FormContainer>
 	)

@@ -19,10 +19,10 @@ const LogoNav = styled(NavLink)`
   font-weight: 600;
 `
 
-export default function Logo() {
+export default function Logo(props) {
   return (
     <LogoContainer>
-      <LogoNav to="/dashboard">house of plants</LogoNav>
+      <LogoNav to={props.currentUser ? "/dashboard" : "/"}>house of plants</LogoNav>
     </LogoContainer>
   )
 }
