@@ -19,7 +19,7 @@ const FooterCategory = styled.div`
 	display: flex;
   flex-flow: column;
   .title {
-    color: #F8EFBA;
+    color: white;
     font-weight: 600;
     font-size: 20px;
   }
