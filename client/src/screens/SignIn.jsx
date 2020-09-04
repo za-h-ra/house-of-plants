@@ -8,6 +8,9 @@ const FormContainer = styled.div`
 	flex-flow: column;
 	align-items: center;
 	background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=564&q=80');
+	@media only screen and (max-width: 768px) {
+		display: unset;
+	}
 `
 
 const FormBox = styled.form`
@@ -70,12 +73,12 @@ const StyledButton = styled.button`
 `
 
 const StyledLink = styled(Link)`
-  color: white;
-  text-decoration: underline;
-  &:hover {
-    color: #649173;
-    text-decoration: underline;
-  }
+	color: white;
+	text-decoration: underline;
+	&:hover {
+		color: #649173;
+		text-decoration: underline;
+	}
 `
 
 export default function SignIn(props) {

@@ -8,6 +8,9 @@ const LogoContainer = styled.div`
   align-items: center;
   flex-flow: column;
   background-color: transparent;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 const LogoNav = styled(NavLink)`
